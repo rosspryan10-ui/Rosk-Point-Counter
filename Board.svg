@@ -24,9 +24,23 @@
        y="0" />
     <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="Bear_Island"
+       cx="265.9534"
+       cy="156.84042"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
        id="Winterfell"
        cx="411.31229"
        cy="268.16699"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="The_Gift"
+       cx="474.92273"
+       cy="125.87109"
        rx="7.1865311"
        ry="6.4764113" />
     <ellipse
