@@ -7,12 +7,36 @@
    width="448"
    height="666.66669"
    viewBox="0 0 448 666.66669"
+   sodipodi:docname="Board.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.2225"
+     inkscape:cx="431.08384"
+     inkscape:cy="838.85481"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1" />
   <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
      id="g1">
     <image
        width="800"
@@ -22,28 +46,28 @@
        id="image1"
        x="0"
        y="0" />
-<ellipse
+    <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
        id="t1"
        cx="265.9534"
        cy="156.84042"
        rx="7.1865311"
        ry="6.4764113" />
-<ellipse
+    <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
        id="t4"
        cx="176.50145"
        cy="339.53571"
        rx="7.1865311"
        ry="6.4764113" />
-<ellipse
+    <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
        id="t5"
        cx="300.55054"
        cy="266.20444"
        rx="7.1865311"
        ry="6.4764113" />
-<ellipse
+    <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
        id="t3"
        cx="609.47284"
@@ -106,18 +130,60 @@
        cy="472.74225"
        rx="7.1865311"
        ry="6.4764113" />
-<ellipse
+    <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
-       id="t2"
-       cx="474.92273"
-       cy="125.87109"
+       id="t15"
+       cx="222.83478"
+       cy="593.55408"
        rx="7.1865311"
        ry="6.4764113" />
     <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
-       id="Drangon_Stone"
-       cx="596.61597"
-       cy="745.02856"
+       id="t16"
+       cx="251.18857"
+       cy="659.64813"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t18"
+       cx="232.01678"
+       cy="744.18604"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t17"
+       cx="282.82251"
+       cy="707.39056"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t20"
+       cx="270.28058"
+       cy="785.91614"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t19"
+       cx="195.57097"
+       cy="815.09607"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t14"
+       cx="174.20288"
+       cy="604.38232"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t2"
+       cx="474.92273"
+       cy="125.87109"
        rx="7.1865311"
        ry="6.4764113" />
   </g>

@@ -38,9 +38,9 @@
 
 <h2>Total Points: <span id="score">0</span></h2>
 <h2>Base Money: <span id="baseMoney">0</span></h2>
-<h2>North Bonus: <span id="northBonus">0</span></h2>
+<h2>Bonus Money: <span id="bonusMoney">0</span></h2>
 <h2>Total Money: <span id="totalMoney">0</span></h2>
- 
+
 <p>
     Last Territory Clicked:
     <strong id="selectedTerritory">None</strong>
@@ -64,14 +64,40 @@
     <div class="territory" data-name="t12" data-points="2" style="left:465.526px; top:389.9447px;" onclick="toggleTerritory(this)"></div>
     <div class="territory" data-name="t13" data-points="1" style="left:529.68958px; top:319.32098px;" onclick="toggleTerritory(this)"></div>
 
+    <div class="territory" data-name="t14" data-points="2" style="left:174.20288px; top:604.38232px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t15" data-points="2" style="left:222.83478px; top:593.55408px;" onclick="toggleTerritory(this)"></div>
+
+    <div class="territory" data-name="t16" data-points="1" style="left:251.18857px; top:659.64813px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t17" data-points="2" style="left:282.82251px; top:707.39056px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t18" data-points="2" style="left:232.01678px; top:744.18604px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t19" data-points="2" style="left:195.57097px; top:815.09607px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t20" data-points="1" style="left:270.28058px; top:785.91614px;" onclick="toggleTerritory(this)"></div>
+
+
 </div>
 
 <script>
-
 let score = 0;
 
-function pointsToMoney(points) {
+const regions = [
+    {
+        name: "North",
+        territories: ["t1","t2","t3","t4","t5","t6","t7","t8","t9","t10","t11","t12","t13"],
+        bonus: 8
+    },
+    {
+        name: "Iron Islands",
+        territories: ["t14","t15"],
+        bonus: 1
+    },
+    {
+        name: "Westerlands",
+        territories: ["t16","t17","t18","t19","t20"],
+        bonus: 3
+    }
+];
 
+function pointsToMoney(points) {
     if (points === 0) return 0;
     if (points <= 11) return 6;
     if (points <= 14) return 7;
@@ -83,78 +109,56 @@ function pointsToMoney(points) {
     if (points <= 32) return 13;
     if (points <= 35) return 14;
     if (points <= 38) return 15;
-
     return 16;
 }
 
-function calculateNorthBonus() {
+function calculateBonusMoney() {
+    let bonusMoney = 0;
 
-    const northTerritories = [
-        "t1","t2","t3","t4","t5","t6","t7",
-        "t8","t9","t10","t11","t12","t13"
-    ];
+    regions.forEach(region => {
+        const ownsWholeRegion = region.territories.every(id => {
+            const territory = document.querySelector(`[data-name="${id}"]`);
+            return territory && territory.dataset.selected === "true";
+        });
 
-    for (const id of northTerritories) {
-
-        const territory =
-            document.querySelector(`[data-name="${id}"]`);
-
-        if (!territory || territory.dataset.selected !== "true") {
-            return 0;
+        if (ownsWholeRegion) {
+            bonusMoney += region.bonus;
         }
-    }
+    });
 
-    return 8;
+    return bonusMoney;
 }
 
 function updateMoneyDisplay() {
-
     const baseMoney = pointsToMoney(score);
+    const bonusMoney = calculateBonusMoney();
+    const totalMoney = baseMoney + bonusMoney;
 
-    const northBonus = calculateNorthBonus();
-
-    const totalMoney = baseMoney + northBonus;
-
-    document.getElementById("score").textContent =
-        score;
-
-    document.getElementById("baseMoney").textContent =
-        baseMoney;
-
-    document.getElementById("northBonus").textContent =
-        northBonus;
-
-    document.getElementById("totalMoney").textContent =
-        totalMoney;
+    document.getElementById("score").textContent = score;
+    document.getElementById("baseMoney").textContent = baseMoney;
+    document.getElementById("bonusMoney").textContent = bonusMoney;
+    document.getElementById("totalMoney").textContent = totalMoney;
 }
 
 function toggleTerritory(element) {
-
     const points = Number(element.dataset.points);
     const name = element.dataset.name;
 
     if (element.dataset.selected === "true") {
-
         element.dataset.selected = "false";
         element.style.background = "rgba(255,0,0,0.6)";
         score -= points;
-
     } else {
-
         element.dataset.selected = "true";
         element.style.background = "rgba(0,255,0,0.7)";
         score += points;
-
     }
 
-    document.getElementById("selectedTerritory").textContent =
-        name;
-
+    document.getElementById("selectedTerritory").textContent = name;
     updateMoneyDisplay();
 }
 
 updateMoneyDisplay();
-
 </script>
 
 </body>
