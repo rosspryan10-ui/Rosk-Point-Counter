@@ -22,23 +22,93 @@
        id="image1"
        x="0"
        y="0" />
-    <ellipse
+<ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
-       id="Bear_Island"
+       id="t1"
        cx="265.9534"
        cy="156.84042"
        rx="7.1865311"
        ry="6.4764113" />
+<ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t4"
+       cx="176.50145"
+       cy="339.53571"
+       rx="7.1865311"
+       ry="6.4764113" />
+<ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t5"
+       cx="300.55054"
+       cy="266.20444"
+       rx="7.1865311"
+       ry="6.4764113" />
+<ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t3"
+       cx="609.47284"
+       cy="96.854736"
+       rx="7.1865311"
+       ry="6.4764113" />
     <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
-       id="Winterfell"
+       id="t7"
        cx="411.31229"
        cy="268.16699"
        rx="7.1865311"
        ry="6.4764113" />
     <ellipse
        style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
-       id="The_Gift"
+       id="t8"
+       cx="500.63232"
+       cy="236.56639"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t9"
+       cx="580.34601"
+       cy="197.40074"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t6"
+       cx="283.99225"
+       cy="368.94061"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t12"
+       cx="465.526"
+       cy="389.9447"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t13"
+       cx="529.68958"
+       cy="319.32098"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t10"
+       cx="211.02701"
+       cy="484.63797"
+       rx="7.1865311"
+       ry="6.4764113" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t11"
+       cx="343.18039"
+       cy="472.74225"
+       rx="7.1865311"
+       ry="6.4764113" />
+<ellipse
+       style="fill:#ff0000;fill-opacity:0.849741;stroke-width:1.67644"
+       id="t2"
        cx="474.92273"
        cy="125.87109"
        rx="7.1865311"

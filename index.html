@@ -23,8 +23,6 @@
             border: 2px solid darkred;
             border-radius: 50%;
             cursor: pointer;
-
-            /* Makes the circle centered on left/top */
             transform: translate(-50%, -50%);
         }
 
@@ -39,7 +37,10 @@
 <h1>Rosk Point Counter</h1>
 
 <h2>Total Points: <span id="score">0</span></h2>
-
+<h2>Base Money: <span id="baseMoney">0</span></h2>
+<h2>North Bonus: <span id="northBonus">0</span></h2>
+<h2>Total Money: <span id="totalMoney">0</span></h2>
+ 
 <p>
     Last Territory Clicked:
     <strong id="selectedTerritory">None</strong>
@@ -49,37 +50,19 @@
 
     <img src="Board.webp" width="800">
 
-    <!-- WINTERFELL -->
-    <div class="territory"
-     data-name="Winterfell"
-     data-points="2"
-     style="left:411px; top:268px;"
-     onclick="toggleTerritory(this)">
-    </div>
-
-    <div class="territory"
-     data-name="Dragon Stone"
-     data-points="3"
-     style="left:596.61597px; top:745.02856px;"
-     onclick="toggleTerritory(this)">
-    </div>
-
-    <div class="territory"
-     data-name="The Gift"
-     data-points="1"
-     style="left:474.92273px; top:125.87109px;"
-     onclick="toggleTerritory(this)">
-    </div>
-
-    <div class="territory"
-     data-name="Bear Island"
-     data-points="2"
-     style="left:265.9534px; top:156.84042px;"
-     onclick="toggleTerritory(this)">
-    </div>
-
-  
-    <!-- Add more territories here -->
+    <div class="territory" data-name="t1" data-points="2" style="left:265.9534px; top:156.84042px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t2" data-points="1" style="left:474.92273px; top:125.87109px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t3" data-points="2" style="left:609.47284px; top:96.854736px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t4" data-points="2" style="left:176.50145px; top:339.53571px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t5" data-points="1" style="left:300.55054px; top:266.20444px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t6" data-points="2" style="left:283.99225px; top:368.94061px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t7" data-points="2" style="left:411.31229px; top:268.16699px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t8" data-points="2" style="left:500.63232px; top:236.56639px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t9" data-points="2" style="left:580.34601px; top:197.40074px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t10" data-points="2" style="left:211.02701px; top:484.63797px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t11" data-points="1" style="left:343.18039px; top:472.74225px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t12" data-points="2" style="left:465.526px; top:389.9447px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t13" data-points="1" style="left:529.68958px; top:319.32098px;" onclick="toggleTerritory(this)"></div>
 
 </div>
 
@@ -87,10 +70,68 @@
 
 let score = 0;
 
+function pointsToMoney(points) {
+
+    if (points === 0) return 0;
+    if (points <= 11) return 6;
+    if (points <= 14) return 7;
+    if (points <= 17) return 8;
+    if (points <= 20) return 9;
+    if (points <= 23) return 10;
+    if (points <= 26) return 11;
+    if (points <= 29) return 12;
+    if (points <= 32) return 13;
+    if (points <= 35) return 14;
+    if (points <= 38) return 15;
+
+    return 16;
+}
+
+function calculateNorthBonus() {
+
+    const northTerritories = [
+        "t1","t2","t3","t4","t5","t6","t7",
+        "t8","t9","t10","t11","t12","t13"
+    ];
+
+    for (const id of northTerritories) {
+
+        const territory =
+            document.querySelector(`[data-name="${id}"]`);
+
+        if (!territory || territory.dataset.selected !== "true") {
+            return 0;
+        }
+    }
+
+    return 8;
+}
+
+function updateMoneyDisplay() {
+
+    const baseMoney = pointsToMoney(score);
+
+    const northBonus = calculateNorthBonus();
+
+    const totalMoney = baseMoney + northBonus;
+
+    document.getElementById("score").textContent =
+        score;
+
+    document.getElementById("baseMoney").textContent =
+        baseMoney;
+
+    document.getElementById("northBonus").textContent =
+        northBonus;
+
+    document.getElementById("totalMoney").textContent =
+        totalMoney;
+}
+
 function toggleTerritory(element) {
 
-    let points = Number(element.dataset.points);
-    let name = element.dataset.name;
+    const points = Number(element.dataset.points);
+    const name = element.dataset.name;
 
     if (element.dataset.selected === "true") {
 
@@ -106,9 +147,13 @@ function toggleTerritory(element) {
 
     }
 
-    document.getElementById("score").textContent = score;
-    document.getElementById("selectedTerritory").textContent = name;
+    document.getElementById("selectedTerritory").textContent =
+        name;
+
+    updateMoneyDisplay();
 }
+
+updateMoneyDisplay();
 
 </script>
 
