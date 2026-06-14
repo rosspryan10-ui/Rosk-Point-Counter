@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game of Thrones Territory Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .map-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .territory {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 0, 0, 0.6);
+            border: 2px solid darkred;
+            border-radius: 50%;
+            cursor: pointer;
+
+            /* Makes the circle centered on left/top */
+            transform: translate(-50%, -50%);
+        }
+
+        .territory:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Game of Thrones Territory Tracker</h1>
+
+<h2>Total Points: <span id="score">0</span></h2>
+
+<p>
+    Last Territory Clicked:
+    <strong id="selectedTerritory">None</strong>
+</p>
+
+<div class="map-container">
+
+    <img src="Board.webp" width="800">
+
+    <!-- WINTERFELL -->
+    <div class="territory"
+         data-name="Winterfell"
+         data-points="3"
+         style="left:300px; top:150px;"
+         onclick="toggleTerritory(this)">
+    </div>
+
+    <!-- WHITE HARBOR -->
+    <div class="territory"
+         data-name="White Harbor"
+         data-points="2"
+         style="left:420px; top:250px;"
+         onclick="toggleTerritory(this)">
+    </div>
+
+    <!-- THE DREADFORT -->
+    <div class="territory"
+         data-name="The Dreadfort"
+         data-points="2"
+         style="left:420px; top:170px;"
+         onclick="toggleTerritory(this)">
+    </div>
+
+    <!-- Add more territories here -->
+
+</div>
+
+<script>
+
+let score = 0;
+
+function toggleTerritory(element) {
+
+    let points = Number(element.dataset.points);
+    let name = element.dataset.name;
+
+    if (element.dataset.selected === "true") {
+
+        element.dataset.selected = "false";
+        element.style.background = "rgba(255,0,0,0.6)";
+        score -= points;
+
+    } else {
+
+        element.dataset.selected = "true";
+        element.style.background = "rgba(0,255,0,0.7)";
+        score += points;
+
+    }
+
+    document.getElementById("score").textContent = score;
+    document.getElementById("selectedTerritory").textContent = name;
+}
+
+</script>
+
+</body>
+</html>
