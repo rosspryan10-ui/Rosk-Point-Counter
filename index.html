@@ -26,6 +26,12 @@
             transform: translate(-50%, -50%);
         }
 
+        .money-total {
+            font-size: 48px;
+            color: rgb(22, 25, 202);
+            font-weight: bold;
+}
+
         .territory:hover {
             transform: translate(-50%, -50%) scale(1.2);
         }
@@ -38,13 +44,13 @@
 
 <h2>Total Points: <span id="score">0</span></h2>
 <h2>Base Money: <span id="baseMoney">0</span></h2>
-<h2>Bonus Money: <span id="bonusMoney">0</span></h2>
-<h2>Total Money: <span id="totalMoney">0</span></h2>
+<h2>Completed Region Bonus Money: <span id="bonusMoney">0</span></h2>
+<h1 class="money-total">
+    Total Money: <span id="totalMoney">0</span>
+</h1>
 
-<p>
-    Last Territory Clicked:
-    <strong id="selectedTerritory">None</strong>
-</p>
+<button onclick="resetBoard()">Reset Board</button>
+
 
 <div class="map-container">
 
@@ -73,6 +79,39 @@
     <div class="territory" data-name="t19" data-points="2" style="left:195.57097px; top:815.09607px;" onclick="toggleTerritory(this)"></div>
     <div class="territory" data-name="t20" data-points="1" style="left:270.28058px; top:785.91614px;" onclick="toggleTerritory(this)"></div>
 
+    <div class="territory" data-name="t21" data-points="2" style="left:351.37875px; top:546.82611px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t22" data-points="2" style="left:396.4585px; top:620.45795px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t23" data-points="1" style="left:352.1947px; top:669.72583px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t24" data-points="1" style="left:345.92477px; top:741.53772px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t25" data-points="2" style="left:432.63437px; top:706.99988px;" onclick="toggleTerritory(this)"></div>
+
+    <div class="territory" data-name="t26" data-points="1" style="left:476.17017px; top:600.74231px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t27" data-points="2" style="left:558.5321px; top:525.95496px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t28" data-points="2" style="left:546.26221px; top:611.02655px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="t29" data-points="2" style="left:593.35217px; top:646.03064px;" onclick="toggleTerritory(this)"></div>
+
+    <div class="territory" data-name="R1" data-points="2" style="left:137.81639px; top:1119.4784px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="R2" data-points="2" style="left:190.74072px; top:993.58893px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="R3" data-points="2" style="left:253.01678px; top:868.04694px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="R4" data-points="1" style="left:367.18857px; top:815.95081px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="R5" data-points="1" style="left:203.00452px; top:1064.8507px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="R6" data-points="2" style="left:282.35831px; top:947.22076px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="R7" data-points="2" style="left:395.82047px; top:887.12463px;" onclick="toggleTerritory(this)"></div>
+
+    <div class="territory" data-name="C1" data-points="2" style="left:494.44418px; top:759.78113px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="C2" data-points="1" style="left:569.55463px; top:714.23102px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="C3" data-points="2" style="left:520.73456px; top:842.20038px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="C4" data-points="3" style="left:596.6405px; top:743.03473px;" onclick="toggleTerritory(this)"></div>
+
+    <div class="territory" data-name="D1" data-points="1" style="left:338.73459px; top:1004.8404px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="D2" data-points="2" style="left:338.18652px; top:1086.4764px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="D3" data-points="2" style="left:455.18652px; top:1081.4764px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="D4" data-points="2" style="left:587.18652px; top:1084.4764px;" onclick="toggleTerritory(this)"></div>
+
+    <div class="territory" data-name="S1" data-points="1" style="left:456.37057px; top:935.38647px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="S2" data-points="2" style="left:553.30719px; top:886.67072px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="S3" data-points="2" style="left:561.27856px; top:956.56641px;" onclick="toggleTerritory(this)"></div>
+    <div class="territory" data-name="S4" data-points="2" style="left:636.82867px; top:890.3844px;" onclick="toggleTerritory(this)"></div>
 
 </div>
 
@@ -94,6 +133,36 @@ const regions = [
         name: "Westerlands",
         territories: ["t16","t17","t18","t19","t20"],
         bonus: 3
+    },
+    {
+        name: "Riverlands",
+        territories: ["t21","t22","t23","t24","t25"],
+        bonus: 3
+    },
+    {
+        name: "The Vale",
+        territories: ["t26","t27","t28","t29"],
+        bonus: 2
+    },
+    {
+        name: "The Reach",
+        territories: ["R1","R2","R3","R4","R5","R6","R7"],
+        bonus: 5
+    },
+    {
+        name: "The Crownlands",
+        territories: ["C1","C2","C3","C4"],
+        bonus: 3
+    },
+    {
+        name: "The Stormlands",
+        territories: ["S1","S2","S3","S4"],
+        bonus: 2
+    },
+    {
+        name: "Dorne",
+        territories: ["D1","D2","D3","D4"],
+        bonus: 2
     }
 ];
 
@@ -154,7 +223,7 @@ function toggleTerritory(element) {
         score += points;
     }
 
-    document.getElementById("selectedTerritory").textContent = name;
+    
     updateMoneyDisplay();
 }
 
